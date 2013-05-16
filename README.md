@@ -1,3 +1,3 @@
-# Trello plugin for (TheDude)[https://github.com/adamphillips/the\_dude]
+# Trello plugin for TheDude
 
-Adds basic Trello integration to TheDude
+Adds basic Trello integration to [TheDude](https://github.com/adamphillips/the_dude)
