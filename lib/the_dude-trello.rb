@@ -45,12 +45,14 @@ end
 TheDude::Command.new /find (\S+) on trello board :trello_board_id/ do |card_title, board_id|
   extend Hirb::Console
   card_regex = Regexp.new(Regexp.quote(card_title), Regexp::IGNORECASE)
+  say 'Just having a look'
   board = Trello::Board.find(board_id);
   anything_found = false
 
   board.lists.each do |list|
     cards = list.cards.map!{|c| {title: c.name, url: c.url} }.select{|c| c[:title].match card_regex}
     if cards.any?
+      anything_found = true
       say "\n\n#{list.name}"
       card_index = menu(cards, :fields => [:title])
       card_index.each do |ci|
